@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunar Outpost · Junior Astronaut Mission Trainer</title>
+<meta name="description" content="Run a Moon base for 6 days. Every supply choice has a trade-off, powered by real NASA space weather data.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div><b>LUNAR OUTPOST</b><small>Junior astronaut mission trainer</small></div>
+  <div class="right"><span id="badge" class="badge">Loading data…</span></div>
+</header>
+<section class="hero">
+  <h1>Your outpost.<br><em>Your call.</em></h1>
+  <p>Six lunar days. Four astronauts. Every supply choice has a trade-off. Can you get the whole crew home safe?</p>
+</section>
+<main id="app"></main>
+<footer>
+  <button class="link" onclick="document.getElementById('info').showModal()">Data &amp; Science</button>
+  <span>Space weather: NASA DONKI · Facts: NASA OSDR</span>
+</footer>
+<dialog id="info">
+  <h2>Data &amp; Science</h2>
+  <ul>
+    <li><b>NASA DONKI</b> (space weather): real solar flares and CMEs set the radiation risk each day. The badge at the top shows if the events are live from NASA, or a saved sample.</li>
+    <li><b>NASA OSDR</b> (space biology): the science facts on each result screen.</li>
+    <li><b>Simplified game model:</b> damage numbers, decay and the 20-unit budget are game rules, not real dose measurements. Real habitats are far more complex.</li>
+    <li><b>Lunar night:</b> the Moon has about 14 Earth days of darkness, so solar power drops. In this game it lasts one day.</li>
+  </ul>
+  <button class="go" onclick="document.getElementById('info').close()">Close</button>
+</dialog>
+<script src="data/events.js"></script>
+<script src="data/facts.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
