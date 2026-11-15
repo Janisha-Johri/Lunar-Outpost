@@ -16,14 +16,24 @@ const shuffle = a => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).
 const clamp = v => Math.max(0, Math.min(100, Math.round(v)));
 let pool = EVENTS.slice(), live = false, G, view = "play";
 
+let feed = "";
 function badge() {
   const b = $("#badge");
   b.className = "badge " + (live ? "live" : "sample");
-  b.textContent = live ? "LIVE NASA DATA" : SAMPLE_IS_REAL ? "ARCHIVED NASA DATA" : "SAMPLE DATA";
+  b.textContent = feed || (live ? "LIVE NASA DATA" : SAMPLE_IS_REAL ? "ARCHIVED NASA DATA" : "SAMPLE DATA");
 }
 
 async function loadLive() {
-  try {
+  try { 
+      const r = await fetch("data/events.json", { cache: "no-cache" });
+      if (r.ok) {
+        const j = await r.json();
+        if (j.events && j.events.length >= 3) {
+          pool = j.events; live = true; feed = "NASA DONKI · UPDATED " + j.updated;
+          badge(); newGame(); return;
+        }
+      }
+    } catch (e) {}
     const e = new Date(), s = new Date(e - 30 * 864e5), f = d => d.toISOString().slice(0, 10);
     const q = `startDate=${f(s)}&endDate=${f(e)}&api_key=DEMO_KEY`;
     const ctl = new AbortController(); setTimeout(() => ctl.abort(), 6000);
