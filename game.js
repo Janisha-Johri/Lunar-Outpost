@@ -116,6 +116,8 @@ function render() {
       <button class="go" onclick="newGame()">Play again with new events</button></section>`;
   }
   app.innerHTML = h;
+  const dc = $("#dayChip");
+if (dc) dc.textContent = `Day ${String(Math.min(G.day + 1, CFG.days)).padStart(2, "0")} / ${CFG.days}`;
 }
 
 badge(); newGame(); loadLive();
