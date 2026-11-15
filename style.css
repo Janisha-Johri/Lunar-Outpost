@@ -11,7 +11,7 @@ body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 "Space Grotesk"
   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/40px 40px,
   linear-gradient(90deg,rgba(7,11,20,.9) 0%,rgba(7,11,20,.3) 100%),
   linear-gradient(180deg,rgba(7,11,20,0) 60%,var(--bg) 100%),
-  url(assets/hero.png) right center/cover,#101a2e}
+  url(assets/lunar-outpost.jpg) right center/cover,#101a2e}
 .eyebrow{display:flex;align-items:center;gap:12px;font:500 14px "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--amb);margin-bottom:18px}
 .eyebrow::before{content:"";width:40px;height:2px;background:var(--amb)}
 .eyebrow span{color:var(--mut)}
