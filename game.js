@@ -33,7 +33,8 @@ async function loadLive() {
           badge(); newGame(); return;
         }
       }
-    } catch (e) {}
+       } catch (e) {}
+  try {
     const e = new Date(), s = new Date(e - 30 * 864e5), f = d => d.toISOString().slice(0, 10);
     const q = `startDate=${f(s)}&endDate=${f(e)}&api_key=DEMO_KEY`;
     const ctl = new AbortController(); setTimeout(() => ctl.abort(), 6000);
