@@ -2,16 +2,24 @@ import { writeFileSync, mkdirSync } from "node:fs";
 
 const KEY = process.env.NASA_API_KEY || "DEMO_KEY";
 const day = d => d.toISOString().slice(0, 10);
-const end = new Date(), start = new Date(end - 90 * 864e5);
-const q = `startDate=${day(start)}&endDate=${day(end)}&api_key=${KEY}`;
+const end = new Date(), start = new Date(end - 30 * 864e5);
 
-// A 404 from DONKI just means "nothing found", so treat it as an empty list.
+// Try 30 days first, then NASA's own default range. Never stops the whole script.
 async function get(type) {
-  const r = await fetch(`https://api.nasa.gov/DONKI/${type}?${q}`);
-  if (r.status === 404) { console.log(`${type}: no data (404)`); return []; }
-  if (!r.ok) { console.log(`${type}: failed with ${r.status}`); return []; }
-  try { const j = await r.json(); console.log(`${type}: ${j.length} items`); return Array.isArray(j) ? j : []; }
-  catch { console.log(`${type}: bad response`); return []; }
+  const urls = [
+    `https://api.nasa.gov/DONKI/${type}?startDate=${day(start)}&endDate=${day(end)}&api_key=${KEY}`,
+    `https://api.nasa.gov/DONKI/${type}?api_key=${KEY}`
+  ];
+  for (const u of urls) {
+    try {
+      const r = await fetch(u);
+      if (!r.ok) { console.log(`${type}: status ${r.status} - ${(await r.text()).slice(0, 150)}`); continue; }
+      const j = await r.json();
+      if (Array.isArray(j) && j.length) { console.log(`${type}: ${j.length} items`); return j; }
+      console.log(`${type}: empty list`);
+    } catch (e) { console.log(`${type}: error ${e.message}`); }
+  }
+  return [];
 }
 
 const [fl, cm] = await Promise.all([get("FLR"), get("CME")]);
