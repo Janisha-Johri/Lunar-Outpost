@@ -3,6 +3,18 @@
  "events": [
   {
    "type": "CME",
+   "classType": "329 km/s",
+   "date": "2026-11-18",
+   "intensity": 1
+  },
+  {
+   "type": "CME",
+   "classType": "385 km/s",
+   "date": "2026-11-18",
+   "intensity": 1
+  },
+  {
+   "type": "CME",
    "classType": "559 km/s",
    "date": "2026-11-17",
    "intensity": 2
@@ -24,6 +36,18 @@
    "classType": "745 km/s",
    "date": "2026-11-17",
    "intensity": 2
+  },
+  {
+   "type": "CME",
+   "classType": "392 km/s",
+   "date": "2026-11-17",
+   "intensity": 1
+  },
+  {
+   "type": "CME",
+   "classType": "438 km/s",
+   "date": "2026-11-17",
+   "intensity": 1
   },
   {
    "type": "CME",
@@ -216,30 +240,6 @@
    "classType": "507 km/s",
    "date": "2026-11-07",
    "intensity": 2
-  },
-  {
-   "type": "CME",
-   "classType": "330 km/s",
-   "date": "2026-11-07",
-   "intensity": 1
-  },
-  {
-   "type": "CME",
-   "classType": "423 km/s",
-   "date": "2026-11-07",
-   "intensity": 1
-  },
-  {
-   "type": "CME",
-   "classType": "264 km/s",
-   "date": "2026-11-06",
-   "intensity": 1
-  },
-  {
-   "type": "CME",
-   "classType": "368 km/s",
-   "date": "2026-11-06",
-   "intensity": 1
   }
  ]
 }
