@@ -21,6 +21,12 @@
   },
   {
    "type": "CME",
+   "classType": "321 km/s",
+   "date": "2026-11-19",
+   "intensity": 1
+  },
+  {
+   "type": "CME",
    "classType": "437 km/s",
    "date": "2026-11-18",
    "intensity": 1
@@ -234,12 +240,6 @@
    "classType": "803 km/s",
    "date": "2026-11-10",
    "intensity": 2
-  },
-  {
-   "type": "CME",
-   "classType": "346 km/s",
-   "date": "2026-11-10",
-   "intensity": 1
   }
  ]
 }
