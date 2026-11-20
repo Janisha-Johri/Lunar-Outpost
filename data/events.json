@@ -1,9 +1,21 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "events": [
   {
    "type": "CME",
    "classType": "364 km/s",
+   "date": "2026-11-19",
+   "intensity": 1
+  },
+  {
+   "type": "CME",
+   "classType": "376 km/s",
+   "date": "2026-11-19",
+   "intensity": 1
+  },
+  {
+   "type": "CME",
+   "classType": "425 km/s",
    "date": "2026-11-19",
    "intensity": 1
   },
@@ -227,18 +239,6 @@
    "type": "CME",
    "classType": "346 km/s",
    "date": "2026-11-10",
-   "intensity": 1
-  },
-  {
-   "type": "CME",
-   "classType": "974 km/s",
-   "date": "2026-11-10",
-   "intensity": 2
-  },
-  {
-   "type": "CME",
-   "classType": "338 km/s",
-   "date": "2026-11-09",
    "intensity": 1
   }
  ]
